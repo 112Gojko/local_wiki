@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live-Flugdaten-Visualisierung – Praktikums-Wiki</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="site-title" href="../index.html">Praktikums-Wiki</a>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="../nach-tagen/index.html">Nach Tagen</a></li>
+          <li><a href="index.html">Nach Projekten</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <p class="breadcrumb"><a href="../index.html">Start</a> &raquo; <a href="index.html">Nach Projekten</a> &raquo; Live-Flugdaten-Visualisierung</p>
+
+    <h1>Live-Flugdaten-Visualisierung</h1>
+    <p><em>09.07.&ndash;16.07.2026</em></p>
+
+    <p>
+      Entwicklung eines Web-basierten Dashboards zur Live-Visualisierung von
+      Flugverkehr auf einem interaktiven 3D-Globus (OSINT-artiges
+      Tracking-Tool). Hauptziel: Live-Abruf von Flugzeugpositionen über die
+      OpenSky-API (via Node/Express-Backend als CORS-Proxy), Darstellung auf
+      einem 3D-Globus mit automatischem 20-Sekunden-Refresh, Flugbahn-Anzeige,
+      Klick-Info-Panel (Flugnummer, Airline, Hersteller, Modell, Höhe,
+      Geschwindigkeit, geschätzte Sitzplatzkapazität), Such-/Filterfunktion
+      sowie Sprachumschaltung DE/EN. Praktikums-Lernprojekt zur
+      eigenständigen Durchführung eines vollständigen
+      Webentwicklungs-Prozesses (Anforderungen &rarr; Wireframes &rarr; Dev
+      &rarr; Refactoring &rarr; Testphase) mit Fokus auf
+      Full-Stack-Grundlagen: Backend-Proxy-Architektur, OAuth2-Anbindung an
+      eine externe API, 3D-Datenvisualisierung im Browser.
+      <a class="quelle quelle--intern" href="https://github.com/112Gojko/flugzeug-dashboard" target="_blank" rel="noopener">
+        Quelle: eigene Arbeit
+      </a>
+    </p>
+
+    <h2>Technischer Aufbau</h2>
+    <p>
+      Backend als CORS-Proxy zu OpenSky: Login per Client-Credentials-Flow,
+      Abruf über <code>/states/all</code>.
+      <a class="quelle quelle--extern" href="https://openskynetwork.github.io/opensky-api/rest.html" target="_blank" rel="noopener">
+        Quelle: OpenSky-API-Doku
+      </a>
+    </p>
+    <p>
+      Frontend: interaktiver 3D-Globus via globe.gl (Punkte, Pfade,
+      3D-Objekte, Konfigurationsoptionen).
+      <a class="quelle quelle--extern" href="https://github.com/vasturiano/globe.gl" target="_blank" rel="noopener">
+        Quelle: globe.gl-Doku
+      </a>
+    </p>
+
+    <h2>Change Request: Clustering-Optimierung</h2>
+    <p>
+      Im gewählten Europa-Ausschnitt sind gleichzeitig bis zu ca. 4000
+      Flugzeuge aktiv &ndash; deutlich mehr als ursprünglich angenommen.
+      Ohne Gruppierung überlagerten sich die Icons unübersichtlich.
+      Umgesetzt wurde ein distanzbasierter Algorithmus mit quadratisch
+      zoom-abhängigem Gruppierungsradius, der nahegelegene Flugzeuge zu
+      einem gemeinsamen Icon zusammenfasst. Ergebnis: funktioniert
+      zuverlässig, in der Testphase bestätigt &ndash; bei sehr hoher
+      lokaler Dichte bleibt die Ansicht dennoch spürbar voll, was als
+      bewusst akzeptierte Grenze dokumentiert ist (eine vollständige Lösung
+      hätte eine aufwendigere Dichte-Visualisierung wie eine Heatmap statt
+      einzelner Icons gebraucht).
+      <a class="quelle quelle--intern" href="https://github.com/112Gojko/flugzeug-dashboard/commit/0e7bdda" target="_blank" rel="noopener">
+        Quelle: eigener Commit
+      </a>
+    </p>
+
+    <h2>Zugehörige Tage</h2>
+    <ul class="entry-list">
+      <li><a href="../nach-tagen/2026-07-09.html">09.07.2026</a></li>
+      <li><a href="../nach-tagen/2026-07-10.html">10.07.2026</a></li>
+      <li><a href="../nach-tagen/2026-07-13.html">13.07.2026</a></li>
+      <li><a href="../nach-tagen/2026-07-15.html">15.07.2026</a></li>
+      <li><a href="../nach-tagen/2026-07-16.html">16.07.2026</a></li>
+    </ul>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>[Name] &middot; Praktikums-Wiki</p>
+    </div>
+  </footer>
+
+</body>
+</html>
