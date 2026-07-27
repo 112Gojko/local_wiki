@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Videobearbeitungs-Projekt – Praktikums-Wiki</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="site-title" href="../index.html">Praktikums-Wiki</a>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="../nach-tagen/index.html">Nach Tagen</a></li>
+          <li><a href="index.html">Nach Projekten</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <p class="breadcrumb"><a href="../index.html">Start</a> &raquo; <a href="index.html">Nach Projekten</a> &raquo; Videobearbeitungs-Projekt</p>
+
+    <h1>Videobearbeitungs-Projekt (Beat-Sync-Tool)</h1>
+    <p><em>Lieblingsprojekt &middot; 17.07.&ndash;24.07.2026</em></p>
+
+    <p>
+      Entwicklung eines Python-basierten Command-Line-Tools ("Beat-Sync-Tool").
+      Hauptziel: automatisches Analysieren von Audiospuren (Erkennen von
+      Beat-Transienten/Onsets) und Export von zeitlich exakten XML-Markern
+      für Adobe Premiere Pro &ndash; für den eigenen Editing-Workflow, um das
+      aufwendige manuelle Setzen von Beat-Markern beim Schneiden von Videos
+      auf Musik zu automatisieren und drastisch zu beschleunigen.
+      <a class="quelle quelle--intern" href="https://github.com/112Gojko/videoschnitt/tree/master" target="_blank" rel="noopener">
+        Quelle: eigene Arbeit
+      </a>
+    </p>
+
+    <h2>Change Request: Optimierung des Algorithmus</h2>
+    <p>
+      Nachträgliche Erweiterung/Optimierung des Algorithmus (Ellis-DP &amp;
+      Autokorrelation), um auch bei komplexen Rhythmen, Tempowechseln und
+      schwierigen Audiospuren (z.&nbsp;B. Synkopen) stabile, flüssige
+      Beat-Landkarten zu berechnen.
+      <a class="quelle quelle--extern" href="https://librosa.org/doc/latest/generated/librosa.beat.beat_track.html" target="_blank" rel="noopener">
+        Quelle: librosa-Doku
+      </a>
+      <a class="quelle quelle--extern" href="https://www.ee.columbia.edu/~dpwe/pubs/Ellis07-beattrack.pdf" target="_blank" rel="noopener">
+        Quelle: Ellis-Paper
+      </a>
+    </p>
+
+    <h2>Ergebnis</h2>
+    <p>
+      Die Vektorisierung der Dynamischen Programmierung hat die Laufzeit um
+      ca. 8x reduziert (Testfall "Sicko Mode": 226s &rarr; 28.5s), bei exakt
+      identischen Ergebnissen &ndash; verifiziert gegen die madmom-Referenz.
+      <a class="quelle quelle--intern" href="https://github.com/112Gojko/videoschnitt/commit/e33960d" target="_blank" rel="noopener">
+        Quelle: eigener Commit
+      </a>
+    </p>
+    <p>
+      Der Eigenbau-Beat-Tracker insgesamt ist von "komplett falsches Tempo
+      bei mehreren Songs" auf "8 von 9 Testsongs bei 8&ndash;31ms Abweichung
+      zu madmom" gekommen, mit den drei verbleibenden Grenzfällen ehrlich
+      dokumentiert statt versteckt.
+      <a class="quelle quelle--intern" href="https://github.com/112Gojko/videoschnitt/tree/master" target="_blank" rel="noopener">
+        Quelle: eigene Arbeit
+      </a>
+    </p>
+
+    <h2>Warum Lieblingsprojekt</h2>
+    <p>
+      Das technisch anspruchsvollste und mathematisch tiefgreifendste Projekt
+      des Praktikums (Signalverarbeitung, Autokorrelation, Dynamische
+      Programmierung), das zudem ein reales, tägliches Problem im eigenen
+      Editing-Workflow gelöst hat.
+    </p>
+
+    <h2>Zugehörige Tage</h2>
+    <ul class="entry-list">
+      <li><a href="../nach-tagen/2026-07-17.html">17.07.2026</a></li>
+      <li><a href="../nach-tagen/2026-07-20.html">20.07.2026</a></li>
+      <li><a href="../nach-tagen/2026-07-21.html">21.07.2026</a></li>
+      <li><a href="../nach-tagen/2026-07-22.html">22.07.2026</a></li>
+      <li><a href="../nach-tagen/2026-07-23.html">23.07.2026</a></li>
+      <li><a href="../nach-tagen/2026-07-24.html">24.07.2026</a></li>
+    </ul>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>[Name] &middot; Praktikums-Wiki</p>
+    </div>
+  </footer>
+
+</body>
+</html>
