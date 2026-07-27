@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fact-Check-Projekt – Praktikums-Wiki</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="site-title" href="../index.html">Praktikums-Wiki</a>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="../nach-tagen/index.html">Nach Tagen</a></li>
+          <li><a href="index.html">Nach Projekten</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <p class="breadcrumb"><a href="../index.html">Start</a> &raquo; <a href="index.html">Nach Projekten</a> &raquo; Fact-Check-Projekt</p>
+
+    <h1>Fact-Check-Projekt (YouTube Transkript Fact-Checker)</h1>
+    <p><em>06.07.2026</em></p>
+
+    <p>
+      Entwicklung einer Next.js-basierten Web-App zur automatisierten
+      inhaltlichen Prüfung von YouTube-Videos. Hauptziel: automatisches
+      Abrufen des Transkripts eines eingegebenen YouTube-Videos (lokal per
+      <code>yt-dlp</code>, ohne Cloud-Dienst), anschließende Weiterleitung an
+      eine externe Analyse (Power-Automate-Workflow), die die getroffenen
+      Aussagen faktisch prüft und strukturiert zurückgibt: Kernzusammenfassung,
+      validierte Fakten (mit Quelle), falsche Aussagen (mit Gegenquelle) sowie
+      ein Gesamt-Fazit zur Vertrauenswürdigkeit. Im Test anhand eines
+      Fitness-Erklärvideos ("The Only 25 Exercises You Ever Need") zeigte sich
+      die App voll funktionsfähig: trainingswissenschaftliche Aussagen wurden
+      korrekt als plausibel bestätigt (samt Quellenangabe), eine zu pauschal
+      formulierte Behauptung (Nackentraining verursache keine Schlafapnoe)
+      wurde dagegen als unbelegt entlarvt (samt Gegenquelle) &ndash;
+      abgerundet durch ein abschließendes Fazit zur
+      Gesamt-Vertrauenswürdigkeit des Videos.
+      <a class="quelle quelle--intern" href="https://github.com/112Gojko/fact_check_app" target="_blank" rel="noopener">
+        Quelle: eigene Arbeit
+      </a>
+    </p>
+
+    <p>
+      Zweck: schnelles Einschätzen, ob ein YouTube-Video (z.&nbsp;B. Interview,
+      Erklärvideo) inhaltlich vertrauenswürdig ist, ohne die im Video
+      getroffenen Aussagen manuell einzeln recherchieren und gegenchecken zu
+      müssen.
+    </p>
+
+    <h2>Change Request: zwei technische Probleme behoben</h2>
+    <p>
+      Der Transkript-Abruf schlug zunächst fehl ("keine Untertitel gefunden",
+      obwohl vorhanden). Ursache war ein doppeltes Problem: <code>yt-dlp</code>
+      war auf dem Zielrechner gar nicht installiert, und der im Code
+      hinterlegte Rückfallpfad zeigte auf ein anderes, nicht mehr
+      existierendes Benutzerprofil. Der eigentliche Fehler wurde dabei im Code
+      stillschweigend abgefangen und stattdessen fälschlich als "keine
+      Untertitel vorhanden" gemeldet. Nach Installation von <code>yt-dlp</code>
+      (per winget) und Korrektur des Rückfallpfads funktioniert der Abruf
+      zuverlässig.
+      <a class="quelle quelle--intern" href="https://github.com/112Gojko/fact_check_app" target="_blank" rel="noopener">
+        Quelle: eigene Arbeit
+      </a>
+      <a class="quelle quelle--extern" href="https://github.com/yt-dlp/yt-dlp" target="_blank" rel="noopener">
+        Quelle: yt-dlp
+      </a>
+    </p>
+    <p>
+      Zusätzlich war das Git-Repository selbst beschädigt: durch die Ablage
+      in einem OneDrive-synchronisierten Ordner waren interne Git-Dateien
+      (Index, Referenzen) korrumpiert. Nach Verschieben des Projekts von
+      OneDrive auf lokalen Speicher wurde das Repository neu aufgesetzt
+      (frischer Commit-Verlauf) und erfolgreich zu GitHub übertragen &ndash;
+      inklusive korrekt ausgeschlossener sensibler Dateien (<code>.env.local</code>
+      mit dem Power-Automate-Webhook-Link bleibt bewusst lokal, nie auf
+      GitHub).
+      <a class="quelle quelle--intern" href="https://github.com/112Gojko/fact_check_app" target="_blank" rel="noopener">
+        Quelle: eigene Arbeit
+      </a>
+    </p>
+
+    <h2>Zugehörige Tage</h2>
+    <ul class="entry-list">
+      <li><a href="../nach-tagen/2026-07-06.html">06.07.2026</a></li>
+    </ul>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>[Name] &middot; Praktikums-Wiki</p>
+    </div>
+  </footer>
+
+</body>
+</html>
