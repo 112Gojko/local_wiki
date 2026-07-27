@@ -1,0 +1,197 @@
+/* ===========================================================
+   Praktikums-Wiki – gemeinsames Stylesheet für alle Seiten
+   Struktur: Variablen -> Reset -> Layout -> Komponenten
+   =========================================================== */
+
+:root {
+  --color-bg: #ffffff;
+  --color-bg-alt: #f4f6f8;
+  --color-text: #1c1f24;
+  --color-muted: #5b6570;
+  --color-accent: #2f5597;
+  --color-accent-light: #d9e1f2;
+  --color-border: #dde2e7;
+
+  --color-quelle-intern: #2f5597;
+  --color-quelle-extern: #8a5a00;
+
+  --font-base: "Segoe UI", system-ui, -apple-system, sans-serif;
+
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2.5rem;
+
+  --radius: 6px;
+  --max-width: 860px;
+}
+
+/* Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-base);
+  color: var(--color-text);
+  background: var(--color-bg);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* Layout */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-2);
+}
+
+header.site-header {
+  background: var(--color-accent);
+  color: #fff;
+  padding: var(--space-2) 0;
+  margin-bottom: var(--space-4);
+}
+
+header.site-header a {
+  color: #fff;
+}
+
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.site-title {
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+nav.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: var(--space-3);
+  margin: 0;
+  padding: 0;
+}
+
+nav.main-nav a {
+  text-decoration: none;
+  font-weight: 600;
+}
+
+nav.main-nav a:hover {
+  text-decoration: underline;
+}
+
+main {
+  margin-bottom: var(--space-4);
+}
+
+footer.site-footer {
+  border-top: 1px solid var(--color-border);
+  padding: var(--space-3) 0;
+  color: var(--color-muted);
+  font-size: 0.9rem;
+}
+
+/* Startseite: zwei große Einstiegs-Kacheln (nach Tagen / nach Projekten) */
+.entry-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--space-3);
+  margin: var(--space-4) 0;
+}
+
+.entry-card {
+  display: block;
+  padding: var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  text-decoration: none;
+  color: var(--color-text);
+  background: var(--color-bg-alt);
+}
+
+.entry-card:hover {
+  border-color: var(--color-accent);
+}
+
+.entry-card h2 {
+  margin-top: 0;
+  color: var(--color-accent);
+}
+
+/* Übersichtslisten (nach-tagen/index.html, nach-projekten/index.html) */
+.week-group {
+  margin-bottom: var(--space-3);
+}
+
+.week-group h2 {
+  font-size: 1rem;
+  color: var(--color-muted);
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: var(--space-1);
+}
+
+.entry-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.entry-list li {
+  padding: var(--space-1) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.entry-list a {
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.entry-list a:hover {
+  text-decoration: underline;
+}
+
+/* Quellenangaben: zwei Varianten, optisch unterscheidbar */
+.quelle {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
+  margin-left: 0.3rem;
+  white-space: nowrap;
+}
+
+.quelle--intern {
+  color: var(--color-quelle-intern);
+  background: var(--color-accent-light);
+}
+
+.quelle--extern {
+  color: var(--color-quelle-extern);
+  background: #f5e9d0;
+}
+
+/* Breadcrumb / Zurück-Link auf Unterseiten */
+.breadcrumb {
+  margin-bottom: var(--space-2);
+  font-size: 0.9rem;
+}
+
+.breadcrumb a {
+  color: var(--color-accent);
+}
