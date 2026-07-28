@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lokales Wiki – Praktikums-Wiki</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="site-title" href="../index.html">Praktikums-Wiki</a>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="../nach-tagen/index.html">Nach Tagen</a></li>
+          <li><a href="index.html">Nach Projekten</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <p class="breadcrumb"><a href="../index.html">Start</a> &raquo; <a href="index.html">Nach Projekten</a> &raquo; Lokales Wiki</p>
+
+    <h1>Lokales Wiki</h1>
+    <p><em>ab 27.07.2026</em></p>
+
+    <p>
+      Aufbau dieses Wikis selbst: eine rein statische HTML-Seite (kein
+      Backend, keine Datenbank) zur Dokumentation des Praktikums, navigierbar
+      sowohl nach Tagen als auch nach Projekten, mit einer Quellenangabe zu
+      jeder Aussage.
+      <a class="quelle quelle--intern" href="https://github.com/112Gojko/local_wiki" target="_blank" rel="noopener">
+        Quelle: eigene Arbeit
+      </a>
+    </p>
+
+    <p>
+      Zweck: Präsentation des Praktikums am Ende gegenüber Praktikumsbetreuer
+      und Schule.
+    </p>
+
+    <h2>Verlauf</h2>
+    <p>
+      Ordnerstruktur festgelegt (<code>nach-tagen/</code> für eine kurze,
+      chronologische Übersicht, <code>nach-projekten/</code> für die
+      ausführlichen Inhalte, <code>assets/</code> für ein gemeinsames
+      Stylesheet). Projekt-Katalog aus der Excel-Liste abgeleitet &ndash; die
+      Spalte "Bereich" war dafür zu grob/gemischt, die tatsächlichen Projekte
+      ergaben sich erst aus dem Tätigkeits-Freitext. Die Excel wurde
+      anschließend um eine Zuordnungs-Spalte (Tag &rarr; Projekt) ergänzt.
+      Gemeinsames Stylesheet mit zwei unterscheidbaren Quellen-Typen (intern/
+      extern) gebaut, damit jede Aussage im Wiki konsistent belegt werden
+      kann.
+    </p>
+
+    <h2>Besonderheit</h2>
+    <p>
+      Vor dem Verlinken der Lager-Inventurdatei (siehe
+      <a href="sonstiges.html">Sonstiges</a>) wurden interne Angaben
+      (Lagerorte, ein Kollegenname) aus der Datei entfernt, bevor sie
+      öffentlich verlinkt wurde &ndash; bewusster Umgang mit sensiblen Daten.
+    </p>
+
+    <h2>Zugehörige Tage</h2>
+    <ul class="entry-list">
+      <li><a href="../nach-tagen/2026-07-27.html">27.07.2026</a></li>
+    </ul>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>[Name] &middot; Praktikums-Wiki</p>
+    </div>
+  </footer>
+
+</body>
+</html>
