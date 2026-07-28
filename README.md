@@ -1,6 +1,8 @@
 # Praktikums-Wiki
 
-<!-- TODO: 2-3 Sätze in eigenen Worten – was ist das, welcher Zeitraum. -->
+Statisches HTML-Wiki zur Dokumentation eines Praktikums (Zeitraum ab 06.07.2026), navigierbar
+nach Tagen und nach Projekten, mit Quellenangabe zu jeder Aussage. Dient als Grundlage für die
+Präsentation gegenüber Praktikumsbetreuer und Schule.
 
 ## Struktur
 
