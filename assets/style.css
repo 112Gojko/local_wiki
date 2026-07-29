@@ -186,6 +186,21 @@ footer.site-footer {
   background: #f5e9d0;
 }
 
+/* Screenshot/Screen-Recording-Beleg auf Projektseiten */
+.screenshot {
+  max-width: 100%;
+  display: block;
+  border-radius: var(--radius);
+  border: 1px solid var(--color-border);
+  margin: var(--space-2) 0 var(--space-1);
+}
+
+.screenshot-caption {
+  margin: 0 0 var(--space-3);
+  font-size: 0.9rem;
+  color: var(--color-muted);
+}
+
 /* Breadcrumb / Zurück-Link auf Unterseiten */
 .breadcrumb {
   margin-bottom: var(--space-2);
