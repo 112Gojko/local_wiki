@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Motivations-App – Praktikums-Wiki</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="site-title" href="../index.html">Praktikums-Wiki</a>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="../nach-tagen/index.html">Nach Tagen</a></li>
+          <li><a href="index.html">Nach Projekten</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <p class="breadcrumb"><a href="../index.html">Start</a> &raquo; <a href="index.html">Nach Projekten</a> &raquo; Motivations-App</p>
+
+    <h1>Motivations-App</h1>
+    <p><em>ab 05.08.2026</em></p>
+
+    <p>
+      Eigenständiges App-Projekt zur schonenden Verhaltensänderung: ein
+      persönlicher Gewohnheits-Tracker, der eine erste Beobachtungswoche
+      nutzt, um daraus ein realistisches, individuelles Reduktionsziel für
+      die Folgewoche zu berechnen &ndash; statt starrer Vorgaben oder
+      Verbote. Bewusst ohne erzwungene Abstinenz, mit selbst wählbarem
+      Reduktionstempo.
+      <a class="quelle quelle--intern" href="https://github.com/112Gojko/gesundheits_app" target="_blank" rel="noopener">
+        Quelle: eigene Arbeit
+      </a>
+    </p>
+
+    <h2>Technischer Aufbau</h2>
+    <p>
+      Event-basiertes Tracking mit Zeitstempel pro Eintrag (statt reiner
+      Tageszähler), ein Reduktionsalgorithmus mit Dämpfung bei hoher
+      Tages-Schwankung und einer Mindest-Reduktions-Regel &ndash; inklusive
+      nachvollziehbarem Rechenweg statt nur des gerundeten Ergebnisses.
+      <a class="quelle quelle--intern" href="https://github.com/112Gojko/gesundheits_app" target="_blank" rel="noopener">
+        Quelle: eigene Arbeit
+      </a>
+    </p>
+    <p>
+      Aus den echten Nutzungsdaten wird ein typisches Zeitfenster pro
+      Gewohnheit erkannt, um rechtzeitig eine Erinnerung auszulösen &ndash;
+      über echte Push-Benachrichtigungen (Service Worker, Web Push/VAPID)
+      sowie ergänzend einen dezenten In-App-Hinweis. Läuft über einen
+      lokalen Node/Express-Server, bewusst für einen einzigen Nutzer ohne
+      Cloud-Anbindung oder Login.
+      <a class="quelle quelle--intern" href="https://github.com/112Gojko/gesundheits_app" target="_blank" rel="noopener">
+        Quelle: eigene Arbeit
+      </a>
+    </p>
+
+    <h2>Zugehörige Tage</h2>
+    <ul class="entry-list">
+      <li><a href="../nach-tagen/2026-08-05.html">05.08.2026</a></li>
+      <li><a href="../nach-tagen/2026-08-06.html">06.08.2026</a></li>
+      <li><a href="../nach-tagen/2026-08-10.html">10.08.2026</a></li>
+      <li><a href="../nach-tagen/2026-08-11.html">11.08.2026</a></li>
+      <li><a href="../nach-tagen/2026-08-12.html">12.08.2026</a></li>
+    </ul>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Gojko Radic &middot; Praktikums-Wiki</p>
+    </div>
+  </footer>
+
+</body>
+</html>
